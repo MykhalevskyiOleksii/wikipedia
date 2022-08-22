@@ -1,0 +1,74 @@
+html,body{
+    margin:0;
+    height: 100%;
+}
+.grid *{
+    /* background-color: rgb(69, 92, 223); */
+
+ 
+   
+    
+ 
+}
+.grid{
+    height: 100%;
+    display: grid;
+    /* grid-gap:20px; */
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: 
+    "aside header"
+    "aside main"
+    "aside footer";
+}
+header{
+    grid-area: header;
+}
+aside{
+    grid-area: aside ;
+    background-color: rgb(245, 246, 248);
+   
+    /* color: rgb(41, 41, 240);
+    background-image: linear-gradient(to top,rgba(200,204,209,0) 0,#c8ccd1 33%,#c8ccd1 66%,rgba(200,204,209,0) 100%);
+    background-position:left ;
+    background-repeat: no-repeat; */
+    /* background-size:  100% 2; */
+}
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+footer{
+    grid-area: footer;
+}
+ a{
+    display: block;
+    margin-left: 20px;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+p{
+    font-size: 15px;
+    margin-left: 20px;
+    color: grey;
+    background-image: linear-gradient(to right, rgba(200,204,209,0) 0,#c8ccd1 33%,#c8ccd1 66%,rgba(200,204,209,0) 100%);
+    background-position:  bottom;
+    background-repeat: no-repeat;
+    background-size:  130px 1px;
+}
+.main1{
+    margin: 0px;
+    border: 1px solid #a7d7f9;
+    border-right: none;
+}
+
+
+.header  a{
+   display: inline-block;
+    grid-area: header;
+    margin-top: 70px;
+    margin-left: -13px;
+}
