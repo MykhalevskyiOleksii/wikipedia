@@ -1,18 +1,19 @@
 html,body{
     margin:0;
     height: 100%;
-    background-color: #f6f6f6;
+    background-image: linear-gradient(to bottom,#ffffff 6%,#f6f6f6 10%);
+    background-repeat:none ;
     font-family: sans-serif;
-
+    background-position: bottom left;
 }
 .grid__body{
     display: grid;
     grid-template-columns: 176px 1fr ;
-    grid-template-rows: 40px 39px 58px 1fr 40px;
+    grid-template-rows: 40px 39px 58px 1fr px;
     grid-template-areas: 
     "side header"
     "side menu"
-    "side wrapper"
+    "side content"
     "side content"
     "side footer"
    ;
@@ -20,7 +21,7 @@ html,body{
 
 .grid-side{
     grid-area: side;
-    padding:0 0 0 27px ;
+    padding:0 0 0 22px ;
     display: flex;
     flex-direction: column;
 }
@@ -30,37 +31,39 @@ html,body{
     justify-content: space-between;
     align-items: flex-end;
     padding: 0px;
-    margin: 0px;
-    background-image: linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);
-    background-repeat: no-repeat;
-    background-size: 1px 100%;
-
-}
-
-.grid-wrapper{
-    grid-area: wrapper;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    background-color: #ffffff; 
-    border-bottom: 1px solid grey;
-    border-left:1px solid #a7d7f9 ;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 28.8px;
-    padding: 6PX 20PX;
-    border-top: 1px solid #a7d7f9;
+     margin: 0 16px 0 0px;
 }
 .grid-header{
-    background-image: linear-gradient(to bottom,#ffffff 50%,#f6f6f6 100%);
     grid-area: header;
-    /* background-image: linear-gradient(rgb(255 255 255 / 0%) 0,#bdbdbd00 33%,#c7c7c730 66%,rgb(200 205 211 / 22%)); */
+}
+.header-a{
+    padding: 8px 5px 8px 3px;
+}
+.header-login{
+    position: relative;
+    top:-4px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #54595D;
+}
+.top-header{
+    display: flex;
+  justify-content: right;
+    padding: 5px 3px ; 
+    margin: 0 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.top-header a{
+    color: #0645ad;
+    text-decoration: none;
 }
 .grid-content{
     grid-area: content;
     border: 1px solid #a7d7f9;
     background-color: #ffffff;
     border-right: none;
-    border-top: NONE;
+   
     padding: 0 1.5em 1.5em 1.5em;
     font-size: 14px;
 }
@@ -73,7 +76,9 @@ html,body{
     display: flex;
     justify-content: space-between;
     margin: 0 2px;
-  
+}
+.sidesub p{
+    font-size: 13px;
 }
 .prince{
     float:right;
@@ -93,10 +98,11 @@ html,body{
     color: #54595D;
     font-size: 12px;
     font-family: sans-serif;
-   margin: 20px 0px 5px;
+   margin: 20px 3px 5px;
+   padding: 0 0 4px 0;
 } 
 .ukr{
-    padding: 3px 0 25px 1px;
+    padding:3px 0 25px 6px;
     align-items: center;
     width: 135px;
     position: relative;
@@ -113,36 +119,14 @@ html,body{
 a:hover{
     text-decoration: underline;
 }
-.header-login{
-    position: relative;
-    top:-10px;
-    font-family: sans-serif;
-    font-size: 12px;
-    color: #54595D;
-}
-.header-a{
-    padding: 2px 5px;
-}
 
-
-.top-header{
-    display: flex;
-  justify-content: right;
-    padding: 5px 3px ; 
-}
-.hd1{
-    background: #cef2e0;
-    border-color: #a3bfb1;
-    border: 1px solid #aaa;
-}
-.grid-wrapper>p{
+.firstHeding>p{
     margin: 0px;
 }
 .box{
     display: flex;
 }
 .main-content{
-    width: 812px;
     padding-right: 10px;
     line-height: 1.6;
     margin: 0px;
@@ -189,32 +173,42 @@ td{
 width: 220px;
 height: 30px;
 margin: 0 0 0 15px;
+display: flex;
+justify-content: right;
+padding: 0 10px 0 0;
 }
 .top-phar{
     font-style: italic;
-    margin: 10px 20px;
+    padding: 0 0 0 20px;
 }
 .main-content>p{
     margin: 5px;
 }
-.left-header>li{
+.main-content a{
+    text-decoration: none;
+    color:#0645ad;
+}
+.left-header li{
     display: flex;
     list-style: none;
+
 }
 .side-bar{
     padding: 0px;
-    margin: 0px;
+    margin: 5px 0 0 0;
     display: flex;
     flex-direction: column;
     list-style: none;
     font-size: 12px;
 }
+.side-bar li{
+    padding-bottom: 5px;
+}
 li>a{
     text-decoration: none;
     color: #0645ad;
     font-family: sans-serif;
-    /* font-size: 12px; */
-    padding: 1px 5px;
+     padding: 1px 5px;
 }
 li>a:hover{
 text-decoration: underline;
@@ -227,18 +221,24 @@ text-decoration: underline;
     position: relative;
 }
 
-.nav:last-child{
+.list::after{
+    content: '';
+    width: 1px;
+    height: 22px;
+    position: absolute;
     background-image: linear-gradient(to bottom,rgba(167,215,249,0) 0,#a7d7f9 100%);
-    background-repeat: no-repeat;
-    background-size: 1px 100%;
-    text-decoration: none;
-    background-position: right;
-    margin-right: 7px;
-    
 }
-input { 
+.inputone { 
+min-width: 200px;
 width: 265px;
 height: 25px;
+margin-left: 7px;
+font-size: 15px;
+}
+
+.input:active {
+    background-color: red;
+    border-color: #0645ad;
 }
 
 
@@ -251,7 +251,7 @@ height: 25px;
     height: 100%;
     
 }
-/* тут я дав маржин який не впливає на лівий список чи правильно так робити? */
+
 .nav{
     padding: 0px;
     margin: 0px;
@@ -267,19 +267,78 @@ height: 25px;
     background-size: 1px 100%;
     text-decoration: none;
     font-size: 13px;
-    padding: 5px 0px 6px 5px;
+    padding: 5px 0px 6px 1px;
 }
+
 .nav-right{
     display: flex;
 }
-
-
-
-
-
-
-
-
+.firstHeding{
+    display: flex;
+justify-content: space-between;
+border-bottom: 1px solid grey;
+font-size: 29px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin:23px 0px 0px 3px;
+align-items: end;
+padding: 0px 10px 2px 0px;
+}
+span{
+    font-weight: bold;
+}
+.list>a{
+    background-image: linear-gradient(to top,#8f456700 0,#e8f2f8 1px,#ffffff 100%);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+}
+.search{
+    
+    width: 17px;
+    position: absolute;
+    right: 21px;
+    top: 52px;
+    color: #54595D;
+}
+.userlog{
+    display: flex;
+    align-items: flex-start;
+}
+.user{
+    width: 15px;
+    height: 15px;
+    fill: #54595D;
+    padding: 4px 3px;
+}
+.time{
+    background-color: black;
+    border: 4px solid black;
+    border-radius: 3px;
+    color: white;
+    width: 24px;
+    font-size: 9px;
+}
+.tableheader{
+   height: 40px;
+   padding: 0.4em 0.6em 0.4em 0.6em;
+}
+td{
+    padding: 0.4em 0.6em 0.4em 0.6em;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: 0;
+} 
+/* Навіщо тут ставити important? */
+/* І чи можна зробити це якимось іншим способом? */
+/* і як мені знайти колір який використовується в wikipeia? */
+input:focus {
+    outline: none !important;
+    border:2px solid blue;
+    
+  }
 
 
 
